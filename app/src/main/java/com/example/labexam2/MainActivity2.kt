@@ -1,5 +1,6 @@
 package com.example.labexam2
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -21,10 +22,13 @@ class MainActivity2 : AppCompatActivity() {
                     true
                 }
                 R.id.bottom_navigation -> {
-                    // Load Dashboard Fragment
+                    val intent = Intent(this, SearchActivity::class.java)
+                    startActivity(intent)
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
+                    finish()
                     true
                 }
-                R.id.navigation_notifications -> {
+                R.id.bottom_profile -> {
                     // Load Notifications Fragment
                     true
                 }
